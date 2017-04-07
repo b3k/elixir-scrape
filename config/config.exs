@@ -3,7 +3,8 @@
 use Mix.Config
 
 # use a better html parser
-config :floki, :html_parser, Floki.HTMLParser.Html5ever
+#config :floki, :html_parser, Floki.HTMLParser.Html5ever
+config :floki, :html_parser, Floki.HTMLParser.Mochiweb
 
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
