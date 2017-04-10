@@ -13,6 +13,7 @@ defmodule Scrape.Website do
   alias Scrape.Website
   alias Scrape.Exquery
   alias Scrape.Link
+  alias Scrape.Util.Text
 
   defstruct title: "", description: "", url: "", image: "", favicon: "",
     feeds: [], tags: []
@@ -44,8 +45,9 @@ defmodule Scrape.Website do
       title
       |> String.split(rx)
       |> List.first
+      |> Text.normalize_whitespace
     else
-      title
+      Text.normalize_whitespace(title)
     end
   end
 
